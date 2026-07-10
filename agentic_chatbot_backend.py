@@ -1,14 +1,16 @@
 from langgraph.graph import StateGraph, START, END
 from typing import TypedDict, Annotated
 from langchain_core.messages import BaseMessage, HumanMessage
-from langchain_ollama import ChatOllama
+# from langchain_ollama import ChatOllama
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langgraph.checkpoint.memory import MemorySaver
 from langgraph.graph.message import add_messages
 from dotenv import load_dotenv
 
 load_dotenv()
 
-llm = ChatOllama(model='llama3.2')
+# llm = ChatOllama(model='llama3.2')
+llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash")
 
 
 ## define the state
